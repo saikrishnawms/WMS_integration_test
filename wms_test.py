@@ -1,11 +1,13 @@
 import unittest
 from selenium import webdriver
 import time
+from pathlib import Path
 
 class MyTestCase(unittest.TestCase):
 
     def test_create_new_user_with_G4(self):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
         driver.find_element_by_name("fatherName").send_keys("Shrivastava")
@@ -23,7 +25,8 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_create_new_user_with_Gola(test_navigate_into_Url):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
         driver.find_element_by_name("fatherName").send_keys("Shrivastava")
@@ -42,7 +45,8 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_create_new_user_with_other(self):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
         driver.find_element_by_name("fatherName").send_keys("Shrivastava")
@@ -62,14 +66,17 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_title(self):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         assert 'React App' == driver.title
         driver.close()
 
 
     def test_with_print(self):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
+        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/IdeaProjects/wms-app/chromedriver")
         driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
         driver.find_element_by_xpath("/html/body/div/div/div/div/div[13]/button").click()
         driver.close()
@@ -77,7 +84,8 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_with_result(self):
-        driver = webdriver.Chrome(executable_path="/Users/anubhavsrivastava/Downloads/chromedriver")
+        path = Path(__file__).parent / "chromedriver"
+        driver = webdriver.Chrome(executable_path=path)
         driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
         averageWeight = driver.find_element_by_xpath("/html/body/div/div/div/div/div[8]")
         print(averageWeight.text)
