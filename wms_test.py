@@ -2,6 +2,7 @@ import unittest
 from selenium import webdriver
 import time
 from pathlib import Path
+import wheel
 
 class MyTestCase(unittest.TestCase):
 
