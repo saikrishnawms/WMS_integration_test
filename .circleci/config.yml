@@ -5,7 +5,9 @@ orbs:
   browser-tools: circleci/browser-tools@1.0.0
 
 jobs:
-  build-and-test:
+ test:
+  docker:
+      - image: 'cimg/node:13.12'
     executor: python/default
     steps:
       - checkout
@@ -14,6 +16,7 @@ jobs:
       - python/save-cache
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
+      - browser-tools/install-browser-tools
       - run:
           command: python wms_test.py
           name: wms_test.py
@@ -21,4 +24,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+      -test
