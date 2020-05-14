@@ -12,7 +12,35 @@ jobs:
       - python/load-cache
       - python/install-deps
       - python/save-cache
-      - browser-tools/install-chrome
+      - run:
+          command: >
+        if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
+
+
+        # download chrome
+
+        curl --silent --show-error --location --fail --retry 3 \
+          --output google-chrome-stable_current_amd64.deb \
+          https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+        # setup chrome installation
+
+        $SUDO dpkg -i google-chrome-stable_current_amd64.deb || $SUDO apt-get
+        -fy install
+
+
+        rm -rf google-chrome-stable_current_amd64.deb
+        $SUDO apt-get -f install
+
+
+        $SUDO sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox
+        --no-sandbox|g' \
+            "/opt/google/chrome/google-chrome"
+
+        # verify version
+
+        google-chrome --version
+          name: Install Google Chrome
       - browser-tools/install-chromedriver
       - run:
           command: python wms_test.py
