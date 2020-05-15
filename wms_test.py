@@ -10,7 +10,7 @@ class MyTestCase(unittest.TestCase):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         path = "/usr/bin/chromedriver"
-        driver = webdriver.Chrome(executable_path=path, chrome_options=chrome_options)
+        driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
         driver.find_element_by_name("fatherName").send_keys("Shrivastava")
@@ -31,7 +31,7 @@ class MyTestCase(unittest.TestCase):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         path = "/usr/bin/chromedriver"
-        driver = webdriver.Chrome(executable_path=path, chrome_options=chrome_options)
+        driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
         driver.find_element_by_name("fatherName").send_keys("Shrivastava")
