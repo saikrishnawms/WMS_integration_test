@@ -9,7 +9,7 @@ class MyTestCase(unittest.TestCase):
     def test_create_new_user_with_G4(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
@@ -30,7 +30,7 @@ class MyTestCase(unittest.TestCase):
     def test_create_new_user_with_Gola(test_navigate_into_Url):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
@@ -52,7 +52,7 @@ class MyTestCase(unittest.TestCase):
     def test_create_new_user_with_other(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         driver.find_element_by_name("name").send_keys("Nishi")
@@ -73,7 +73,7 @@ class MyTestCase(unittest.TestCase):
     def test_title(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/lot")
         assert 'React App' == driver.title
@@ -82,7 +82,7 @@ class MyTestCase(unittest.TestCase):
     def test_with_print(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
         driver.find_element_by_xpath("/html/body/div/div/div/div/div[13]/button").click()
@@ -91,7 +91,7 @@ class MyTestCase(unittest.TestCase):
     def test_with_result(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        path = "/Users/anubhavsrivastava/Downloads/chromedriver"
+        path = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(executable_path=path, options=chrome_options)
         driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
         averageWeight = driver.find_element_by_xpath("/html/body/div/div/div/div/div[8]")
