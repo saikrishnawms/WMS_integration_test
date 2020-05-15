@@ -98,8 +98,10 @@ jobs:
                       curl --silent --show-error --location --fail --retry 3 \
                         --output google-chrome-stable_current_amd64.deb \
                         https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                      echo "dowlaoded chrome using ubuntu"
                       $SUDO apt-get update \
                       > /dev/null 2>&1 && \
+                      echo "sudo update ubuntu"
                       $SUDO apt-get install -y \
                         apt-utils \
                         fonts-liberation \
@@ -129,6 +131,7 @@ jobs:
                         xdg-utils \
                         > /dev/null 2>&1
                       # setup chrome installation
+                      echo "un packaging ubuntu"
                       $SUDO dpkg -i \
                         google-chrome-stable_current_amd64.deb \
                         > /dev/null 2>&1
