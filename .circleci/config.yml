@@ -22,8 +22,6 @@ jobs:
       - run:
           name: Install Chrome and driver
           command: sh setup.sh
-
-      - browser-tools/install-chromedriver
       - run:
           command: python wms_test.py
           name: wms_test.py
