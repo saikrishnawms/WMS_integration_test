@@ -133,10 +133,10 @@ jobs:
                       echo "Something went wrong; Google Chrome could not be installed"
                       exit 1
                     fi
-            - browser-tools/install-chromedriver
-            - run:
-                command: python wms_test.py
-                name: wms_test.py
+      - browser-tools/install-chromedriver
+      - run:
+          command: python wms_test.py
+           name: wms_test.py
 
 workflows:
   main:
