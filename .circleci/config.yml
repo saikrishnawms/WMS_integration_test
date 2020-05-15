@@ -31,7 +31,7 @@ jobs:
                         $SUDO rm -rf /Applications/Google\ Chrome.app > /dev/null 2>&1 || true<</parameters.replace-existing>><<^parameters.replace-existing>>echo "$(/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version)is already installed"
                         exit 0<</parameters.replace-existing>>
                       else
-                        echo "Google Chrome is not currently installed; installing it"
+                          echo "Google Chrome is not currently installed; installing it"
                       fi
                     elif cat /etc/issue | grep Alpine > /dev/null 2>&1; then
                       if command -v chromium-browser > /dev/null 2>&1; then
@@ -94,6 +94,7 @@ jobs:
                       rm -rf google-chrome-stable_current_x86_64.rpm liberation-fonts.rpm
                     else
                       # download chrome
+                      echo "installing chrome using ubuntu"
                       curl --silent --show-error --location --fail --retry 3 \
                         --output google-chrome-stable_current_amd64.deb \
                         https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
