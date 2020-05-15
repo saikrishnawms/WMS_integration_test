@@ -131,6 +131,7 @@ jobs:
                       $SUDO dpkg -i \
                         google-chrome-stable_current_amd64.deb \
                         > /dev/null 2>&1
+                      $SUDO apt-get -f install
                       rm -rf google-chrome-stable_current_amd64.deb
                     fi
                     # test/verify installation
