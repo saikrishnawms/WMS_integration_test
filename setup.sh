@@ -4,6 +4,7 @@ sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-k
 sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 sudo apt-get -y update
 sudo apt-get -y install google-chrome-stable
+sudo apt-get install chromium-browser
 sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
 sudo unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/bin/chromedriver
