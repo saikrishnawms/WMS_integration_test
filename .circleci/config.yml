@@ -132,9 +132,7 @@ jobs:
                         > /dev/null 2>&1
                       # setup chrome installation
                       echo "un packaging ubuntu"
-                      $SUDO dpkg -i \
-                        google-chrome-stable_current_amd64.deb \
-                        > /dev/null 2>&1
+                      $SUDO dpkg -i google-chrome-stable_current_amd64.deb
                     fi
                     # test/verify installation
                     echo "repairing ubuntu"
