@@ -21,7 +21,7 @@ jobs:
       - python/save-cache
       - run:
           name: Install Chrome and driver
-          command: sh ./project/setup.sh
+          command: sh setup.sh
 
       - browser-tools/install-chromedriver
       - run:
