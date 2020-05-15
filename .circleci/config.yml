@@ -131,6 +131,7 @@ jobs:
                         xdg-utils \
                         > /dev/null 2>&1
                       # setup chrome installation
+                      $SUDO apt-get install libgbm1
                       echo "un packaging ubuntu"
                       $SUDO dpkg -i google-chrome-stable_current_amd64.deb
                     fi
