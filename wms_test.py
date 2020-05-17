@@ -80,14 +80,6 @@ class MyTestCase(unittest.TestCase):
         assert 'React App' == driver.title
         driver.close()
 
-    def test_with_print(self):
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        path = "/usr/bin/chromedriver"
-        driver = webdriver.Chrome(executable_path=path, options=chrome_options)
-        driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
-        driver.find_element_by_xpath("/html/body/div/div/div/div/div[13]/button").click()
-        driver.close()
 
 
 if __name__ == '__main__':
