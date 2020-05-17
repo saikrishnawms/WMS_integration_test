@@ -1,10 +1,33 @@
 import unittest
-
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
 class MyTestCase(unittest.TestCase):
+    def test_create_new_user_with_G41(self):
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver.get("http://test.saikrishnacoldstorage.in/lot")
+        driver.find_element_by_name("name").send_keys("Nishi")
+        driver.find_element_by_name("fatherName").send_keys("Shrivastava")
+        driver.find_element_by_name("address").send_keys("Bartiningelle")
+        driver.find_element_by_name("phoneNumber").send_keys("8380083195")
+        driver.find_element_by_name("numberOfBags").send_keys(100)
+        driver.find_element_by_name("averageWeight").send_keys(50)
+        driver.find_element_by_name("numberOfEmptyBagsGiven").send_keys(9)
+        driver.find_element_by_xpath(
+            "/html/body/div/div/div/form/div/div[9]/fieldset/div/label[1]/span[1]/span[1]/input").click()
+        driver.find_element_by_name("palledariPaid").click()
+        driver.find_element_by_name("comments").send_keys("test")
+        driver.find_element_by_class_name("MuiButton-label").click()
+        driver.close()
+        driver.quit()
+
+
+
+
+
 
     def test_create_new_user_with_G4(self):
         chrome_options = Options()
