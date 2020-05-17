@@ -7,8 +7,3 @@ sudo apt-get install libxss1 libappindicator1 libindicator7 fonts-liberation lib
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 sudo apt-get -f install
-sudo wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-sudo unzip chromedriver_linux64.zip
-sudo mv chromedriver /usr/bin/chromedriver
-sudo chown root:root /usr/bin/chromedriver
-sudo chmod +x /usr/bin/chromedriver
