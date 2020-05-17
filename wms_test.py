@@ -89,21 +89,6 @@ class MyTestCase(unittest.TestCase):
         driver.find_element_by_xpath("/html/body/div/div/div/div/div[13]/button").click()
         driver.close()
 
-    def test_with_result(self):
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        path = "/usr/bin/chromedriver"
-        driver = webdriver.Chrome(executable_path=path, options=chrome_options)
-        driver.get("http://test.saikrishnacoldstorage.in/showLot/5")
-        averageWeight = driver.find_element_by_xpath("/html/body/div/div/div/div/div[8]")
-        print(averageWeight.text)
-        assert "5050 KG" in averageWeight.text
-        lotNumber = driver.find_element_by_xpath("/html/body/div/div/div/div/div[2]")
-        print(lotNumber.text)
-        assert "5 / 100" in lotNumber.text
-        driver.close()
-        driver.quit()
-
 
 if __name__ == '__main__':
     unittest.main()
